@@ -1,0 +1,26 @@
+{
+  "name": "chrome-cli",
+  "version": "1.0.0",
+  "description": "Open Google Chrome from the command line",
+  "bin": {
+    "chrome": "./chrome"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogocampos/chrome-cli.git"
+  },
+  "keywords": [
+    "chrome",
+    "cli",
+    "command line",
+    "google chrome",
+    "macos"
+  ],
+  "author": "Diogo Campos <khaldiogo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diogocampos/chrome-cli/issues"
+  },
+  "homepage": "https://github.com/diogocampos/chrome-cli#readme"
+}
