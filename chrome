@@ -1,9 +1,20 @@
 #!/bin/bash
 
-if [ "$(osascript -e 'application "Google Chrome" is running')" = 'true' ]
+# By default, this assumes that Chrome is '/Applications/Google Chrome.app'.
+# To point elsewhere, set the CHROME environment variable, e.g.:
+#
+#   $ export CHROME='/Applications/Google Chrome Canary.app'
+
+DEFAULT_CHROME='/Applications/Google Chrome.app'
+
+CHROME_PATH="${CHROME:-"$DEFAULT_CHROME"}"
+CHROME_NAME="$(basename "$CHROME_PATH")"
+CHROME_NAME="${CHROME_NAME%.app}"  # remove '.app' suffix
+
+if [ "$(osascript -e "application \"${CHROME_NAME}\" is running")" = 'true' ]
 then
-  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome "$@"
-  open -a "Google Chrome"
+  "${CHROME_PATH}/Contents/MacOS/${CHROME_NAME}" "$@"
+  open -a "$CHROME_NAME"
 else
-  open -a "Google Chrome" --args "$@"
+  open -a "$CHROME_NAME" --args "$@"
 fi
