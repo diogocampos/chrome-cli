@@ -2,10 +2,13 @@
   "name": "chrome-cli",
   "version": "1.0.0",
   "description": "Open Google Chrome from the command line",
+  "preferGlobal": true,
   "bin": {
     "chrome": "./chrome"
   },
-  "preferGlobal": true,
+  "os": [
+    "darwin"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/diogocampos/chrome-cli.git"
