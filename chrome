@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$(osascript -e 'application "Google Chrome" is running')" = 'true' ]
+then
+  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome "$@"
+  open -a "Google Chrome"
+else
+  open -a "Google Chrome" --args "$@"
+fi
